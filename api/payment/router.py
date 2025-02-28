@@ -16,8 +16,20 @@ async def create_payment(user_id: int) -> list[PaymentTariffModel]:
     return result
 
 
-@api_payment_router.post("/create",
+@api_payment_router.post("/json/create",
                          response_model=str,
                          summary="Создание нового платежа")
 async def create_payment(data: CreatePaymentModel) -> str:
+    return "https://t.me/opengater_vpn_bot"
+
+
+@api_payment_router.post("/create",
+                         response_model=str,
+                         summary="Создание нового платежа")
+async def create_payment(user_id: int,
+                         currency: str,
+                         amount: int) -> str:
+    data = CreatePaymentModel(user_id=user_id,
+                              currency=currency,
+                              amount=amount)
     return "https://t.me/opengater_vpn_bot"
