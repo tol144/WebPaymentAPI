@@ -3,10 +3,10 @@ nginx конфиг
  
 	server {
 		listen 443 ssl;
-		server_name webapp.opngtr.com;
+		server_name *****;
 
-		ssl_certificate /etc/letsencrypt/live/webapp.opngtr.com/fullchain.pem;
-		ssl_certificate_key /etc/letsencrypt/live/webapp.opngtr.com/privkey.pem;
+		ssl_certificate /etc/letsencrypt/live/****/fullchain.pem;
+		ssl_certificate_key /etc/letsencrypt/live/****/privkey.pem;
 
 		location / {
 			proxy_pass http://0.0.0.0:9000;
